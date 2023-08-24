@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import { RouterProvider } from 'react-router-dom'
+import $ from 'jquery'
+import Popper from 'popper.js'
+import router from './router.jsx'
 import './scss/custom.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

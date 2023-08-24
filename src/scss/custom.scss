@@ -1,1 +1,5 @@
-@import '~bootstrap/scss/bootstrap.scss';
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+.bg-primary {
+  background-color: #7500D1 !important;
+}
