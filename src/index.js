@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { RouterProvider } from 'react-router-dom'
 import $ from 'jquery'
+import bootstrap from 'bootstrap'
 import Popper from 'popper.js'
 import router from './router.jsx'
 import './scss/custom.scss';
