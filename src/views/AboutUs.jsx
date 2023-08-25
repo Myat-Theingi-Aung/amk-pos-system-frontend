@@ -1,6 +1,7 @@
 import aboutBgImage from '../img/about-bg-2.png';
 import founder1Image from '../img/founder-1.png';
 import founder2Image from '../img/founder-2.png';
+import storeImage from '../img/store-img.jfif';
 
 export default function ContactUs() {
   return (
@@ -29,12 +30,19 @@ export default function ContactUs() {
           <div className="card rounded border-0 shadow-sm">
             <div className="card-body">
               <h1 className='text-center'>Our Story</h1>
-              <img src={founder1Image} alt="founder1" className='w-25 rounded-circle img-fluid d-inline-block border border-default bg-light' />
-              <img src={founder2Image} alt="founder2" className='w-25 rounded-circle img-fluid d-inline-block border border-default bg-light ' />
-          <div className="row">
-
+              <div className='row d-flex justify-content-center align-items-center'>
+                <div className="col-md-4 text-center">
+                  <img src={founder1Image} alt="founder1" className='w-25 h-100 rounded-circle d-inline-block border border-default bg-light'/>
+                  <p>Ms.blah blah</p>
+                  <span>.......</span>
+                </div>
+                <div className="col-md-4 text-center">
+                  <img src={founder2Image} alt="founder2" className='w-25 h-100 rounded-circle d-inline-block border border-default bg-light ' />
+                  <p>Ms.blah blah</p>
+                  <span>.......</span>
+                </div>
               </div>
-              <div className='text-center'>
+              <div className='col-md-4 text-center'>
                 <p>
                   It all started with a simple idea: to create a place where people could discover a wide array of
                   products that cater to their everyday needs and desires. Our founders, [Founder Names], envisioned
@@ -47,18 +55,25 @@ export default function ContactUs() {
         </div>
       </div>
     </div>
-    <div className='section d-none'>
-      <div className='container'>
-        <h1 className='text-center'>Our Mission</h1>
-        <p className='col-md-4'>
-          Our mission is to bring joy to your shopping journey. We believe that the products you choose should
-           reflect your unique taste and personality. Whether you're looking for a mouthwatering treat,
-           a fashion statement, a sparkling accessory, or a handy kitchen gadget, we've got you covered.
-           We're committed to offering you a delightful selection that combines quality, style, and
-           affordability.
-        </p>
+    <div className="section bg-light">
+      <div className="container">
+        <div className="row p-5">
+          <div className="col-md-6">
+            <img src={storeImage} className="w-75 h-75" />
+          </div>
+          <div className="col-md-6">
+            <h1>Our Mission</h1>
+            <p>
+            Our mission is to bring joy to your shopping journey. We believe that the products you choose should
+            reflect your unique taste and personality. Whether you're looking for a mouthwatering treat, a fashion
+            statement, a sparkling accessory, or a handy kitchen gadget, we've got you covered. We're committed to
+            offering you a delightful selection that combines quality, style, and affordability.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
     </>
     )
 }
