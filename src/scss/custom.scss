@@ -1,5 +1,7 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
+$primary: #ffa2a2;
+
 .bg-primary {
-  background-color: #7500D1 !important;
+  background-color: $primary !important;
 }
