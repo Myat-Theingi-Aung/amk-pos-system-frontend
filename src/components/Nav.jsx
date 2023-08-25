@@ -1,6 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {useNavigate} from 'react-router-dom';
 
 export default function Nav(){
+  const user = JSON.parse(localStorage.getItem('user'))
+  const navigate = useNavigate()
+
+  const handleLogout = async(e) => {
+    localStorage.removeItem('user')
+    navigate('/')
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-primary">
@@ -23,22 +32,30 @@ export default function Nav(){
               <li className="nav-item">
                 <a className="nav-link text-white" href="/contact-us">Contact Us</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="/login">Login</a>
-              </li>
-              <li className="nav-item">
-                <div className="dropdown">
-                  <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <FontAwesomeIcon icon="fa-solid fa-user"/>
-                    <span className='d-inline-block ms-2'>Myat Theingi Aung</span>
-                  </button>
-                  <ul className="dropdown-menu dropdown-menu-end">
-                    <li><a href='/' className="dropdown-item" type="button">Profile</a></li>
-                    <li><a href='/' className="dropdown-item" type="button">Change Password</a></li>
-                    <li><a href='/' className="dropdown-item" type="button">Logout</a></li>
-                  </ul>
+              { user ? 
+                <li className="nav-item">
+                  <div className="dropdown">
+                    <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <FontAwesomeIcon icon="fa-solid fa-user"/>
+                      <span className='d-inline-block ms-2'>{user.name}</span>
+                    </button>
+                    <ul className="dropdown-menu dropdown-menu-end">
+                      <li><a href='/' className="dropdown-item">Profile</a></li>
+                      <li><a href='/' className="dropdown-item">Change Password</a></li>
+                      <li><button onClick={handleLogout} className="dropdown-item">Logout</button></li>
+                    </ul>
+                  </div>
+                </li>
+                : 
+                <div className='d-flex'>
+                  <li className="nav-item">
+                    <a className="nav-link text-white" href="/login">Login</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link text-white" href="/register">Register</a>
+                  </li>
                 </div>
-              </li>
+              }
             </ul>
           </div>
         </div>

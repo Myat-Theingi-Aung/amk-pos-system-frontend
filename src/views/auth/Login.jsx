@@ -4,27 +4,42 @@ import {useNavigate} from 'react-router-dom';
 
 export default function Login() {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user')) || null
   const [error, setError] = React.useState('');
   const [phoneError, setPhoneError] = React.useState('');
 	const [passwordError, setPasswordError] = React.useState('');
   const handleSubmit = async(e) => {
     e.preventDefault();
     const { phone, password } = e.target.elements;
-    console.log(e.target.elements)
     const body = {
 			phone: phone.value,
 			password: password.value
 		};
-    await axios.post('/login', body)
-			.then(response => {
-        localStorage.setItem('user', JSON.stringify(response.data.user))
-        navigate('/');
-			}).catch(error => {
-        console.log(error)
-        error.response.data?.error ? setError(error.response.data.error) : setError('')
-        error?.response?.data?.errors?.phone ? setPhoneError(error.response.data.errors.phone['0']) : setPhoneError('')
-        error?.response?.data?.errors?.password ? setPasswordError(error.response.data.errors.password['0']) : setPasswordError('')
-			})
+
+    try {
+      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+      const response = await axios.post('/login', body);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      navigate('/');
+    } catch (error) {
+      error.response.data?.error ? setError(error.response.data.error) : setError('');
+      error?.response?.data?.errors?.phone
+        ? setPhoneError(error.response.data.errors.phone[0])
+        : setPhoneError('');
+      error?.response?.data?.errors?.password
+        ? setPasswordError(error.response.data.errors.password[0])
+        : setPasswordError('');
+    }
+  }
+
+  React.useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
+  if (user) {
+    return null; 
   }
 
   return (
@@ -37,7 +52,7 @@ export default function Login() {
               <div className="card-body">
                 <form onSubmit={handleSubmit} method="post">
                   {error && (
-                    <p className="text-danger">{error}</p>
+                    <p className="alert alert-danger">{error}</p>
                   )}
                   <div className="mb-3">
                     <label htmlFor="phone" className="form-label">Phone Number</label>
