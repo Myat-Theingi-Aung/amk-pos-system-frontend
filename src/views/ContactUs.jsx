@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Footer from '../components/Footer'
 import Main from "../components/Main";
 
 export default function ContactUs() {
@@ -98,6 +99,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

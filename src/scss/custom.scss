@@ -1,6 +1,6 @@
 @import "./node_modules/bootstrap/scss/bootstrap";
 
-$primary: #ffa2a2;
+$primary: #cb7c7c;
 
 .bg-primary {
   background-color: $primary !important;
@@ -11,6 +11,11 @@ $primary: #ffa2a2;
 }
 
 .btn-primary {
-  color: $primary !important;
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+
+.active {
+  background-color: $primary !important;
 }
 
