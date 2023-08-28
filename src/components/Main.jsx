@@ -4,7 +4,7 @@ import MainImg from '../img/main.jpg'
 const Main = ({ text }) => {
   const styles = {
     container: {
-      height: '70vh',
+      height: '50vh',
       width: '100%',
       backgroundImage: `url(${MainImg})`,
       backgroundSize: 'cover',
@@ -16,10 +16,10 @@ const Main = ({ text }) => {
   return (
     <>
       <Nav />
-      <section style={{ position: 'relative' }}>
+      <section style={{ position: 'relative', marginTop: '56px' }}>
         <div style={styles.container}></div>
       </section>
-      <p className="text-uppercase text-white fs-1 fw-bold" style={{ position: 'absolute', top: '35%', left: '47%' }}>{text}</p>
+      <p className="text-uppercase text-white fs-1 fw-bold" style={{ position: 'absolute', top: '25%', left: '44%' }}>{text}</p>
     </>
   )
 };

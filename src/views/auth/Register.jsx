@@ -14,8 +14,6 @@ export default function Register() {
 	const [passwordError, setPasswordError] = React.useState('');
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // const trimmedPassword = password.trim();
-    // const trimmedConfirmation = password_confirmation.trim();
     const { name, phone, address, NRC, food, color, password, password_confirmation } = e.target.elements;
     console.log(e.target.elements)
     const body = {

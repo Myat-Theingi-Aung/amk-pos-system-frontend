@@ -1,10 +1,8 @@
 import React from 'react';
 import axios from './../../axios';
 import {useNavigate} from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
 
 export default function Login() {
-  const { setUser, csrfToken } = useAuth();
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user')) || null
   const [error, setError] = React.useState('');
@@ -17,11 +15,11 @@ export default function Login() {
 			phone: phone.value,
 			password: password.value
 		};
-    csrfToken();
+    
     try {
+      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
       const response = await axios.post('/login', body);
-      console.log('success')
-      setUser(response.data.user);
+      localStorage.setItem('user', JSON.stringify(response.data.user))
       navigate('/');
     } catch (error) {
       console.log('error')
