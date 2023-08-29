@@ -31,7 +31,6 @@ export default function Register() {
         localStorage.setItem('user', JSON.stringify(response.data.user))
         navigate('/');
 			}).catch(error => {
-        console.log(error)
         error.response.data?.error ? setError(error.response.data.error) : setError('')
         error?.response?.data?.errors?.name ? setNameError(error.response.data.errors.name['0']) : setNameError('')
         error?.response?.data?.errors?.phone ? setPhoneError(error.response.data.errors.phone['0']) : setPhoneError('')

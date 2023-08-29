@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from './../../axios';
 import {useNavigate} from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
 
 export default function ConfirmOldPassword() {
-  const { setUser, csrfToken } = useAuth();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user')) || null
+  const user = JSON.parse(localStorage.getItem('user'))
   const [error, setError] = React.useState('');
   const [passwordError, setPasswordError] = React.useState('');
 
@@ -18,15 +16,8 @@ export default function ConfirmOldPassword() {
     };
 
     try {
-      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-      const headers = {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: csrfToken()
-      };
-      const response = await axios.post(`/confirm/oldPassword/${user.id}`, body, { headers });
-      localStorage.setItem('user', JSON.stringify(response.data.user))
-      navigate('/');
+      const response = await axios.post(`/confirm/oldPassword/${user.id}`, body);
+      alert("hiiii");
     } catch (error) {
         error.response.data?.error ? setError(error.response.data.error) : setError('');
         console.log(error);
