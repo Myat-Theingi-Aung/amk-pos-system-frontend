@@ -3,7 +3,7 @@ import founder1Image from "../img/founder-1.png";
 import founder2Image from "../img/founder-2.png";
 import Main from "../components/Main";
 import Footer from '../components/Footer'
-import {Tabs, TabList, Tab, TabPanel} from "https://cdn.skypack.dev/react-tabs@3.2.2";
+import {Tabs, TabList, Tab, TabPanel} from "react-tabs";
 import jewellery1 from '../img/about/bracelet3.jpg'
 import jewellery2 from '../img/about/earring1.jpg'
 import jewellery3 from '../img/about/necklace1.jpg'
