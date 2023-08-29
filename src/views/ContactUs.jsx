@@ -12,47 +12,47 @@ export default function ContactUs() {
             <div className="container my-5">
               <div className="row mb-5">
                 <div className="col-sm-6 col-md-4 col-lg-4">
-                  <div className="card bg-white rounded border-0 shadow-sm w-100 h-100">
+                  <div className="card bg-primary rounded border-0 shadow-sm w-100 h-100">
                     <div className="card-body">
                       <div className="row">
                         <div className="col-2 pt-2 pb-1 px-3 ">
-                        <FontAwesomeIcon icon="fa-solid fa-location-dot" size="2x" />
+                        <FontAwesomeIcon icon="fa-solid fa-location-dot" className='text-white' size="2x" />
                         </div>
                         <div className="col-8 pt-1 pb-2 px-3">
-                          <p className="card-text">No(100), Bayin Naung Street, Sidaw Mingalar Ward, Pyay</p>
+                          <p className="card-text text-white">No(100), Bayin Naung Street, Sidaw Mingalar Ward, Pyay</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="col-sm-6 col-md-4 col-lg-4">
-                  <div className="card bg-white rounded border-0 shadow-sm w-100 h-100">
+                  <div className="card bg-primary rounded border-0 shadow-sm w-100 h-100">
                     <div className="card-body">
                       <div className="row">
                         <div className="col-2 pt-2 pb-1 px-3 ">
-                          <FontAwesomeIcon icon="fa-regular fa-envelope" size="2x" />
+                          <FontAwesomeIcon icon="fa-regular fa-envelope" className='text-white' size="2x" />
                         </div>
                         <div className="col-8 pt-1 pb-2 px-3">
-                          <p className="card-text">sandarmyint333@gmail.com</p>
+                          <p className="card-text text-white">sandarmyint333@gmail.com</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="col-sm-6 col-md-4 col-lg-4">
-                  <div className="card bg-white rounded border-0 shadow-sm w-100 h-100">
+                  <div className="card bg-primary rounded border-0 shadow-sm w-100 h-100">
                     <div className="card-body">
                       <div className="row">
                         <div className="col-2 pt-2 pb-1 px-3">
-                          <FontAwesomeIcon icon="fa-solid fa-phone" size="2x" />
+                          <FontAwesomeIcon icon="fa-solid fa-phone" className='text-white' size="2x" />
                         </div>
                         <div className="col-8 pt-2 pb-1 px-3">
                           <p className="card-text">
-                            <a className="text-decoration-none text-black" href="tel:09974214737">09-974214737</a>
+                            <a className="text-decoration-none text-white" href="tel:09974214737">09-974214737</a>
                             <span>,</span>
-                            <a className="text-decoration-none text-black d-inline-block ms-2" href="tel:09962153279">09-962153279</a>
+                            <a className="text-decoration-none text-white d-inline-block ms-2" href="tel:09962153279">09-962153279</a>
                             <span>,</span>
-                            <a className="text-decoration-none text-black d-inline-block" href="tel:09955848463">09-955848463</a>
+                            <a className="text-decoration-none text-white d-inline-block" href="tel:09955848463">09-955848463</a>
                           </p>
                         </div>
                       </div>
