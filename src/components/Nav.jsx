@@ -32,7 +32,7 @@ export default function Nav(){
               <li className="nav-item">
                 <a className="nav-link text-white" href="/contact-us">Contact Us</a>
               </li>
-              { user ? 
+              { user ?
                 <li className="nav-item">
                   <div className="dropdown">
                     <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,12 +41,12 @@ export default function Nav(){
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end">
                       <li><a href='/' className="dropdown-item">Profile</a></li>
-                      <li><a href='/' className="dropdown-item">Change Password</a></li>
+                      <li><a href='/confirm-old-password' className="dropdown-item">Change Password</a></li>
                       <li><button onClick={handleLogout} className="dropdown-item">Logout</button></li>
                     </ul>
                   </div>
                 </li>
-                : 
+                :
                 <div className='d-flex'>
                   <li className="nav-item">
                     <a className="nav-link text-white" href="/login">Login</a>

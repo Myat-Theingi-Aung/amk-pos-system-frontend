@@ -4,7 +4,8 @@ import Home from './views/Home';
 import ContactUs from './views/ContactUs';
 import AboutUs from './views/AboutUs';
 import Login from './views/auth/Login';
-import Register from './views/auth/Register'
+import Register from './views/auth/Register';
+import ConfirmOldPassword from './views/auth/ConfirmOldPassword';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/contact-us',
     element: <ContactUs />
+  },
+  {
+    path: '/confirm-old-password',
+    element: <ConfirmOldPassword />
   },
   {
     path: '*',
