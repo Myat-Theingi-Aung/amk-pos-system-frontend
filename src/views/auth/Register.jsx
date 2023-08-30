@@ -26,8 +26,10 @@ export default function Register() {
 			password: password.value,
       password_confirmation: password_confirmation.value
 		};
+    console.log(body)
     await axios.post('/register', body)
 			.then(response => {
+        localStorage.setItem('token', response.data.token)
         localStorage.setItem('user', JSON.stringify(response.data.user))
         navigate('/');
 			}).catch(error => {

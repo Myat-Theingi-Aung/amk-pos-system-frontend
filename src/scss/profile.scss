@@ -1,0 +1,34 @@
+$primary: #cb7c7c;
+$white: #ffffff;
+
+.menu {
+  cursor: pointer;
+}
+
+.menu:hover {
+  background-color: $primary;
+}
+
+.menu:hover a {
+  color: $white !important;
+}
+
+.active {
+  background-color: $primary;
+}
+
+.active a {
+  color: $white !important;
+}
+
+tr {
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  display: inline-block;
+}
+
+.list {
+  list-style-type: square;
+}

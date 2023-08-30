@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useNavigate} from 'react-router-dom';
+import axios from '../axios';
 
 export default function Nav(){
   const user = JSON.parse(localStorage.getItem('user'))
   const navigate = useNavigate()
+  const token = localStorage.getItem('token')
 
   const handleLogout = async(e) => {
+    await axios.post('/logout', null, { headers: { 'Authorization':  token} });
     localStorage.removeItem('user')
     navigate('/')
   }
@@ -40,7 +43,7 @@ export default function Nav(){
                       <span className='d-inline-block ms-2'>{user.name}</span>
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end">
-                      <li><a href='/' className="dropdown-item">Profile</a></li>
+                      <li><a href='/profile' className="dropdown-item">Profile</a></li>
                       <li><a href='/confirm-old-password' className="dropdown-item">Change Password</a></li>
                       <li><button onClick={handleLogout} className="dropdown-item">Logout</button></li>
                     </ul>

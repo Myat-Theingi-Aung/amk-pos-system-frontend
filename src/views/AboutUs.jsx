@@ -21,9 +21,9 @@ import apparel6 from '../img/about/dress2.jpg'
 import apparel7 from '../img/about/furniture8.jpg'
 import apparel8 from '../img/about/kitchen1.jpg'
 import missionBg from '../img/rocket2.png'
-import mission from '../img/about/rocket.png'
-import vision from '../img/about/shared-vision.png'
-import goal from '../img/about/mission.png'
+import mission from '../img/about/mission_red.png'
+import vision from '../img/about/vision-blue.png'
+import goal from '../img/about/goal-green.png'
 
 export default function AboutUs() {
   const jewelleries = [jewellery1, jewellery2, jewellery3, jewellery4, jewellery5, jewellery6, jewellery7, jewellery8];
@@ -73,33 +73,33 @@ export default function AboutUs() {
         <div className="row py-5">
           <div className="col-12">
             <div className="container">
-              <div className="row mb-5 justify-content-end">
-                <div className="col-10">
-                  <h2 className="text-center fw-bold" style={{ letterSpacing: '5px', marginLeft: '200px' }}>Our Mission</h2>
-                  <div className="mision mt-5 d-flex justify-content-start" style={{ marginLeft: '260px' }}>
+              <div className="row justify-content-end">
+                <div className="col-12">
+                  <h2 className="text-center fw-bold text-primary" style={{ letterSpacing: '5px' }}>Our Mission</h2>
+                  <div className="mision mt-5 d-flex justify-content-start">
                     <div className="img-blk me-5">
-                      <img src={mission} alt="mission" width="50px" height="50px" />
+                      <img src={mission} alt="mission" width="70px" height="70px" />
                     </div>
                     <div className="text-blk">
-                      <h3>Mission 01</h3>
+                      <h3 className="text-danger">Mission 01</h3>
                       <p>We're here to make your shopping journey joyful, offering products that match your style. From delicious treats to stylish accessories, find quality and affordability in our delightful selection.</p>
                     </div>
                   </div>
                   <div className="vision mt-5 d-flex justify-content-start" style={{ marginLeft: '130px' }}>
                     <div className="img-blk me-5">
-                      <img src={vision} alt="vision" width="50px" height="50px" />
+                      <img src={vision} alt="vision" width="70px" height="70px" />
                     </div>
                     <div className="text-blk">
-                      <h3>Vision 02</h3>
+                      <h3 style={{ color: '#24a0db' }}>Vision 02</h3>
                       <p>To be the leading provider of exquisite jewellery and fashionable apparel that enhances the beauty and style of our customers.</p>
                     </div>
                   </div>
-                  <div className="goal mt-5 d-flex justify-content-start" style={{ marginLeft: '10px' }}>
+                  <div className="goal mt-5 d-flex justify-content-start" style={{ marginLeft: '260px' }}>
                     <div className="img-blk me-5">
-                      <img src={goal} alt="goal" width="50px" height="50px" />
+                      <img src={goal} alt="goal" width="70px" height="70px" />
                     </div>
                     <div className="text-blk">
-                      <h3>Goal 03</h3>
+                      <h3 style={{ color: '#27d844' }}>Goal 03</h3>
                       <p>To provide a seamless shopping experience, connecting customers with quality products effortlessly. We prioritize convenience and satisfaction</p>
                     </div>
                   </div>

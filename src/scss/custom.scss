@@ -85,21 +85,3 @@ $primary: #cb7c7c;
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
-
-#top {
-  position: relative;
-}
-
-#top::after {
-	content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 55%;
-  border-style: solid;
-  border-color: transparent;
-  border-width: 100vh 50vw;
-  border-top-color: $primary;
-  border-left-color: $primary;
-}
-

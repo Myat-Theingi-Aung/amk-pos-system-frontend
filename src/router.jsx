@@ -6,6 +6,7 @@ import AboutUs from './views/AboutUs';
 import Login from './views/auth/Login';
 import Register from './views/auth/Register';
 import ConfirmOldPassword from './views/auth/ConfirmOldPassword';
+import Profile from './views/user/Profile';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: '/confirm-old-password',
     element: <ConfirmOldPassword />
+  },
+  {
+    path: '/profile',
+    element: <Profile />
   },
   {
     path: '*',

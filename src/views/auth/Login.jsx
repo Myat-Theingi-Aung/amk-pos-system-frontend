@@ -18,6 +18,7 @@ export default function Login() {
     
     try {
       const response = await axios.post('/login', body);
+      localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
       navigate('/');
     } catch (error) {
