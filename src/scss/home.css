@@ -1,0 +1,114 @@
+/*Get 5% cash back*/
+.full-bg {
+  background-image: url("../../src/img/shopping-cart-5.jpg"); /* Replace with the actual URL of your image */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+}
+
+.full-bg-div {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+
+.full-bg-ttl {
+  font-weight: bolder;
+}
+
+.full-bg-text {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.full-bg-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/*Instagram Heart Shape icon*/
+.circle-icon {
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  left: 80%;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.circle-icon:hover {
+  background-color: #cb7c7c !important;
+}
+
+/* Get Up To 70% Off */
+.save-tag {
+  font-size: 25px;
+}
+
+.currency-tag {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.currency-symbol {
+  vertical-align: middle;
+}
+
+.price-tag {
+  font-size: 50px;
+  font-weight: bold;
+  vertical-align: text-top;
+}
+
+.discount-img {
+  border-radius: 0;
+}
+
+/* Today best deals for you */
+.review-div {
+  margin-left: 50px;
+}
+
+.review-section {
+  color: #cb7c7c;
+}
+
+.review-count {
+  color: #000;
+}
+
+.add-to-cart-btn {
+  background: transparent;
+  border: none;
+}
+
+.add-to-cart-text {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #cb7c7c !important;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart-text:hover {
+  color: #fff;
+  background-color: #cb7c7c;
+}/*# sourceMappingURL=home.css.map */

@@ -7,6 +7,7 @@ import Login from './views/auth/Login';
 import Register from './views/auth/Register';
 import ConfirmOldPassword from './views/auth/ConfirmOldPassword';
 import Profile from './views/user/Profile';
+import ProductShow from './views/product/Show'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: <NotFound />
+  },
+  {
+    path: '/product',
+    element: <ProductShow />
   }
 ])
 

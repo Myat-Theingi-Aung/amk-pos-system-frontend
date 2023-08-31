@@ -1,0 +1,31 @@
+.menu {
+  cursor: pointer;
+}
+
+.menu:hover {
+  background-color: #cb7c7c;
+}
+
+.menu:hover a {
+  color: #ffffff !important;
+}
+
+.active {
+  background-color: #cb7c7c;
+}
+
+.active a {
+  color: #ffffff !important;
+}
+
+tr {
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  display: inline-block;
+}
+
+.list {
+  list-style-type: square;
+}/*# sourceMappingURL=profile.css.map */

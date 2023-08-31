@@ -85,3 +85,29 @@ $primary: #cb7c7c;
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
+
+.light-green {
+  color: #27d844;
+}
+
+.custom-btn {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: white !important;
+  border: 2px solid $primary !important;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-btn:hover {
+  background-color: $primary !important;
+  color: white !important;
+}
+
+.custom-btn:focus-visible{
+  border: none !important;
+}
