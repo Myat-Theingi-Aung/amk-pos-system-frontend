@@ -2,6 +2,16 @@
 
 $primary: #cb7c7c;
 
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: $primary;
+}
+
+::selection {
+  color: white;
+  background: $primary;
+}
+
 .bg-primary {
   background-color: $primary !important;
 }
@@ -133,3 +143,30 @@ $primary: #cb7c7c;
   left: 0;
   z-index: -1;
 }
+
+.line{
+  height: 1px;
+  flex: 1;
+  background-color: #dee2e6;
+}
+
+.icon {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: white !important;
+}
+
+.sign-up{
+  text-underline-offset: 5px;
+}
+
+.address-card:hover {
+  background-color: $primary !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.address-card:hover a {
+  color: white !important;
+}
+
