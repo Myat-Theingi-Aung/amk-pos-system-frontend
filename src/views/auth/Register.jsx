@@ -60,7 +60,7 @@ export default function Register() {
                     <div className="card-body p-0">
                       <form onSubmit={handleSubmit} method="post">
                         <div className="row">
-                          <div className="col-6 p-5">
+                          <div className="col-6 px-5 py-3">
                             <h2 className='text-primary mb-3'>General Information</h2>
                             <div className="">
                               {error && ( <p className="text-danger">{error}</p> )}
@@ -100,7 +100,7 @@ export default function Register() {
                               </div>
                             </div>
                           </div>
-                          <div className="col-6 p-5 bg-primary">
+                          <div className="col-6 px-5 py-3 bg-primary">
                             <h2 className='text-white mb-3'>Contact Details</h2>
                             <div className="mb-3">
                               <label htmlFor="address" className="form-label text-white">Address</label>
