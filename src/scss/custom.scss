@@ -107,6 +107,7 @@ $primary: #cb7c7c;
 .custom-btn:hover {
   background-color: $primary !important;
   color: white !important;
+  border: 2px solid white !important;
 }
 
 .custom-btn:focus-visible{
@@ -115,4 +116,20 @@ $primary: #cb7c7c;
 
 .remove-outline {
   outline: none !important;
+}
+
+/* prepare the selectors to add a stroke to */
+.stroke-double {
+  position: relative;
+  background: transparent;
+  z-index: 0;
+  color:white !important;
+}
+/* add a single stroke */
+.stroke-double:before {
+  content: attr(title);
+  position: absolute;
+  -webkit-text-stroke: 0.11em red; 
+  left: 0;
+  z-index: -1;
 }
