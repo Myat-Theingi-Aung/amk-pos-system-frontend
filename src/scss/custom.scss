@@ -44,6 +44,7 @@ $primary: #cb7c7c;
   background: $primary;
   border-color: #aaa;
   color: white;
+  outline: none;
 }
 
 .react-tabs__tab--disabled {
@@ -110,4 +111,8 @@ $primary: #cb7c7c;
 
 .custom-btn:focus-visible{
   border: none !important;
+}
+
+.remove-outline {
+  outline: none !important;
 }
