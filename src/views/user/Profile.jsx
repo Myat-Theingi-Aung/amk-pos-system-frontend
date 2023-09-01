@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../scss/profile.scss'
 import axios from '../../axios';
 import React from 'react';
+import EditModal from '../../components/EditModal';
 
 export default function Profile() {
   const user = JSON.parse(localStorage.getItem('user'))
@@ -14,6 +15,11 @@ export default function Profile() {
   const token = localStorage.getItem('token')
   const GoldPayments = payments.filter((item) => item.category_type_id === 1);
   const OtherPayments = payments.filter((item) => item.category_type_id === 2);
+
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   async function getSaleItems(){
     await axios.get(`/sales/${user.id}/user`)
@@ -32,7 +38,6 @@ export default function Profile() {
   async function getPayments(){
     await axios.get(`/payments/${user.id}/user`)
     .then((response) => {
-      console.log(response.data.payments)
       setPayments(response.data.payments)
     })
   }
@@ -121,10 +126,16 @@ export default function Profile() {
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-4">
                       <h2>User Information</h2>
-                      <a href="/edit-user" className='btn btn-primary'>
+                      <button className="btn btn-primary" onClick={handleShow}>
                         <FontAwesomeIcon icon="fa-solid fa-pen-to-square" />
                         <span className='d-inline-block ms-2'>Edit Profile</span>
-                      </a>
+                      </button>
+                      <EditModal
+                        show={show}
+                        handleClose={handleClose}
+                        handleShow={handleShow}
+                        title="Edit User Info"
+                      />
                     </div>
                     <div className="row">
                       <div className="col-3">
