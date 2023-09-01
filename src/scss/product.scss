@@ -1,0 +1,70 @@
+.product-bg {
+  background-image: url("../../src/img/product-bg-3.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.product-bg-div {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+}
+
+.product-bg-ttl {
+  font-weight: bolder;
+}
+
+.product-bg-text {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.product-bg-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.category-tab {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #cb7c7c !important;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 15px;
+}
+
+/*Instagram Heart Shape icon in product page*/
+.product-circle-icon{
+  width: 40px;
+  height: 40px;
+  top: 60px;
+  right: 5%;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.product-circle-icon:hover {
+  background-color: #cb7c7c !important;
+}
+
+.product-circle-icon:hover .heart-icon {
+  color: #fff ;
+}
