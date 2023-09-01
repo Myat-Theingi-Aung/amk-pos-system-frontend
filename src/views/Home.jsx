@@ -122,13 +122,13 @@ export default function Home() {
               <div className="row">
                 <Slider {...settings}>
                   {categories.map((category, index) => (
-                    <div className="col-12 col-md-2" key={index}>
+                    <div className="col-12 col-md-4" key={index}>
                       <div className="position-relative">
                         <img
-                          className="m-5"
+                          className="my-5 border border-default"
                           src={category.image}
                           height={"300px"}
-                          width={"350px"}
+                          width={"90%"}
                           alt="Card image cap"
                         />
                         <div className="circle-icon position-absolute bg-light rounded-circle d-flex justify-content-center align-items-center p-3">
@@ -149,8 +149,7 @@ export default function Home() {
                           <FontAwesomeIcon icon="fa-solid fa-star" />
                           <span className="review-count mx-2">(121)</span>
                         </div>
-                        {/* <button className="add-to-cart-btn">Add to Cart</button> */}
-                        <button className="add-to-cart-btn mt-2 mb-3"><span className="add-to-cart-text">Add to Cart</span></button>
+                        <button className="add-to-cart-btn mt-3 mb-3"><span className="add-to-cart-text">Add to Cart</span></button>
                       </div>
                     </div>
                   ))}
@@ -162,7 +161,7 @@ export default function Home() {
               <div className="row">
                 {discounts.map((discount, index) => (
                   <div className="col-12 col-md-3" key={index}>
-                    <div className="card my-3 mx-3 mt-5 mb-5">
+                    <div className="card my-3 mt-5 mb-5">
                       <div className="card-body">
                         <div className="card-text">
                          <h3 className="save-tag">Save</h3>
@@ -171,7 +170,7 @@ export default function Home() {
                         </div>
                       </div>
                       <img
-                        className="card-img-top discount-img"
+                        className="card-img-bottom border-top border-default discount-img"
                         src={discount.image}
                         height={"200px"}
                         alt="Card image cap"
@@ -198,8 +197,8 @@ export default function Home() {
               <h2>Services To Help You Shop</h2>
               <div className="row">
                 {services.map((service, index) => (
-                  <div className="col-12 col-md-4" key={index}>
-                    <div className="card my-3 mx-3 mt-5 mb-5">
+                  <div className="col-12 col-md-4 pe-3" key={index}>
+                    <div className="card my-5">
                       <div className="card-body">
                         <div className="card-text">
                          <h3 className="save-tag m-4">Frequently Asked Questions</h3>
@@ -207,7 +206,7 @@ export default function Home() {
                         </div>
                       </div>
                       <img
-                        className="card-img-top discount-img"
+                        className="card-img-bottom border-top border-default discount-img"
                         src={service.image}
                         height={"200px"}
                         alt="Card image cap"
