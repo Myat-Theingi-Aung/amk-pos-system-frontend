@@ -7,6 +7,8 @@ import Products from './views/Products';
 import Login from './views/auth/Login';
 import Register from './views/auth/Register';
 import ConfirmOldPassword from './views/auth/ConfirmOldPassword';
+import ChangePassword from './views/auth/ChangePassword';
+import SecurityQuestion from './views/auth/SecurityQuestion';
 import Profile from './views/user/Profile';
 import ProductShow from './views/product/Show'
 
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   {
     path: '/confirm-old-password',
     element: <ConfirmOldPassword />
+  },
+  {
+    path: '/change-password',
+    element: <ChangePassword />
+  },
+  {
+    path: '/security-question',
+    element: <SecurityQuestion/>
   },
   {
     path: '/profile',

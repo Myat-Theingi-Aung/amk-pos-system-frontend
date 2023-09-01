@@ -8,7 +8,7 @@ export default function Nav(){
   const token = localStorage.getItem('token')
 
   const handleLogout = async(e) => {
-    await axios.post('/logout', null, { headers: { 'Authorization':  token} });
+    // await axios.post('/logout', null, { headers: { 'Authorization':  token} });
     localStorage.removeItem('user')
     navigate('/')
   }

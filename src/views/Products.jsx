@@ -31,29 +31,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import axios from "../axios";
 
-const jewelleries = [
-  jewellery1,
-  jewellery2,
-  jewellery3,
-  jewellery4,
-  jewellery5,
-  jewellery6,
-  jewellery7,
-  jewellery8,
-];
-const electronics = [
-  electronics1,
-  electronics2,
-  electronics3,
-  electronics4,
-  electronics5,
-  electronics6,
-  electronics7,
-  electronics8,
-];
+const jewelleries = [ jewellery1, jewellery2, jewellery3, jewellery4, jewellery5, jewellery6, jewellery7, jewellery8];
+const electronics = [ electronics1, electronics2, electronics3, electronics4, electronics5, electronics6, electronics7, electronics8];
 const clothes = [clothes1, clothes2, clothes3, clothes4];
 const underwears = [underwear1, underwear2, underwear3, underwear4];
-const furnitures = [];
+const furnitures = [jewellery1, jewellery2];
 
 export default function Products() {
   const [categories, setCategory] = useState([]);
@@ -97,49 +79,52 @@ export default function Products() {
                         </Tab>
                       ))}
                     </TabList>
-                    <TabPanel>
-                      <div className="row">
-                        {jewelleries.map((image, index) => (
-                          <div className="col-6 col-md-3 mb-2" key={index}>
-                            <div className="product-img-container position-relative">
-                              <img
-                                src={image}
-                                alt="jewellry"
-                                width="300px"
-                                height="275px"
-                                className="image-thumbnail border border-default my-5"
-                              />
-                              <div className="position-absolute product-circle-icon bg-light rounded-circle d-flex justify-content-center align-items-center p-3">
-                                <FontAwesomeIcon
-                                  icon="fa-regular fa-heart"
-                                  className="heart-icon"
+                    {categories.map((category) => (
+                      <TabPanel key={category.id}>
+                        <div className="row">
+                          {jewelleries.map((image, index) => (
+                            <div className="col-6 col-md-3 mb-2" key={index}>
+                              <div className="product-img-container position-relative">
+                                <img
+                                  src={image}
+                                  alt="jewellry"
+                                  width="300px"
+                                  height="275px"
+                                  className="image-thumbnail border border-default my-5"
                                 />
-                              </div>
-                              <div className="product-review-div">
-                                <h5>Redmi Note 9</h5>
-                                <p className="">blah blah blah blah blah</p>
-                                <div className="review-section">
-                                  <FontAwesomeIcon icon="fa-solid fa-star" />
-                                  <FontAwesomeIcon icon="fa-solid fa-star" />
-                                  <FontAwesomeIcon icon="fa-solid fa-star" />
-                                  <FontAwesomeIcon icon="fa-solid fa-star" />
-                                  <FontAwesomeIcon icon="fa-solid fa-star" />
-                                  <span className="review-count mx-2">
-                                    (121)
-                                  </span>
+                                <div className="position-absolute product-circle-icon bg-light rounded-circle d-flex justify-content-center align-items-center p-3">
+                                  <FontAwesomeIcon
+                                    icon="fa-regular fa-heart"
+                                    className="heart-icon"
+                                  />
                                 </div>
-                                <button className="add-to-cart-btn mt-3 mb-3">
-                                  <span className="add-to-cart-text">
-                                    Add to Cart
-                                  </span>
-                                </button>
+                                <div className="product-review-div">
+                                  <h5>Redmi Note 9</h5>
+                                  <p className="">blah blah blah blah blah</p>
+                                  <div className="review-section">
+                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                    <FontAwesomeIcon icon="fa-solid fa-star" />
+                                    <span className="review-count mx-2">
+                                      (121)
+                                    </span>
+                                  </div>
+                                  <button className="add-to-cart-btn mt-3 mb-3">
+                                    <span className="add-to-cart-text">
+                                      Add to Cart
+                                    </span>
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    </TabPanel>
-                    <TabPanel>
+                          ))}
+                        </div>
+                      </TabPanel>
+                    ))}
+
+                    {/* <TabPanel>
                       <div className="row">
                         {electronics.map((image, index) => (
                           <div className="col-6 col-md-3 mb-2" key={index}>
@@ -306,7 +291,7 @@ export default function Products() {
                           </div>
                         ))}
                       </div>
-                    </TabPanel>
+                    </TabPanel> */}
                   </Tabs>
                 </div>
               </div>

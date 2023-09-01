@@ -136,7 +136,7 @@ export default function Profile() {
               <div className="col-12">
                 <div className="card">
                   <div className="card-body">
-                    <a href="/home" className="text-black text-decoration-none">
+                    <a href="/" className="text-black text-decoration-none">
                       <FontAwesomeIcon icon="fa-solid fa-home" />
                       <span className="d-inline-block ms-2">Home</span>
                     </a>
