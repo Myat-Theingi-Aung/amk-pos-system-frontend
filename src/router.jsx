@@ -3,6 +3,7 @@ import NotFound from './views/NotFound';
 import Home from './views/Home';
 import ContactUs from './views/ContactUs';
 import AboutUs from './views/AboutUs';
+import Products from './views/Products';
 import Login from './views/auth/Login';
 import Register from './views/auth/Register';
 import ConfirmOldPassword from './views/auth/ConfirmOldPassword';
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <AboutUs />
+  },
+  {
+    path: '/products',
+    element: <Products />
   },
   {
     path: '/contact-us',
