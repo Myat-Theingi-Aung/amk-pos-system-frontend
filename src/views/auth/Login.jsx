@@ -94,7 +94,11 @@ export default function Login() {
                           <FontAwesomeIcon style={{ color: '#00acee' }} icon="fa-brands fa-twitter" />
                         </button>
                       </div>
-                      <p className='text-center'>Don't have account? <a href="/register" className='sign-up'>Sign Up</a></p>
+                      <p className='text-center'>Don't have account? <a href="/register" className='sign-up text-decoration-none'>Sign Up</a></p>
+                      <p className='text-center'>
+                        Forgot your password?
+                        <a href="/"><FontAwesomeIcon className='mx-2 border-bottom' icon="fa-solid fa-lock" /></a>
+                      </p>
                     </div>
                   </div>
                 </div>
