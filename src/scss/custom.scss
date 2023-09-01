@@ -92,6 +92,7 @@ $primary: #cb7c7c;
 	transition: .3s ease-in-out;
   border: 1px solid gray;
 }
+
 .store-offer img:hover {
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
@@ -100,6 +101,22 @@ $primary: #cb7c7c;
 .light-green {
   color: #27d844;
 }
+
+// home page Shop Our Top Categories section zoom design
+.test-effect {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.test-effect img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.test-effect:hover img {
+  transform: scale(1.2);
+}
+// home page Shop Our Top Categories section zoom design end
 
 .custom-btn {
   display: inline-block;

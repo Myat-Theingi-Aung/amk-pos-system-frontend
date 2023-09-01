@@ -99,9 +99,9 @@ export default function Home() {
               <div className="row">
                 {categories.map((category, index) => (
                   <div className="col-12 col-md-2" key={index}>
-                    <div className="card store-offer position-relative">
+                    <div className="card test-effect position-relative">
                       <img
-                        className="card-img-top"
+                        className="card-img-top rounded"
                         src={category.image}
                         height={"250px"}
                         alt="Card image cap"
