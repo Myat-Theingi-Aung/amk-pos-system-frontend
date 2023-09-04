@@ -4,10 +4,11 @@ import {useNavigate} from 'react-router-dom';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
+  const { user, setUser } = useAuth();
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user')) || null
   const [error, setError] = React.useState('');
   const [phoneError, setPhoneError] = React.useState('');
 	const [passwordError, setPasswordError] = React.useState('');
@@ -21,8 +22,7 @@ export default function Login() {
     
     try {
       const response = await axios.post('/login', body);
-      localStorage.setItem('token', response.data.token)
-      localStorage.setItem('user', JSON.stringify(response.data.user))
+      setUser(response.data.user)
       navigate('/');
     } catch (error) {
       console.log('error')

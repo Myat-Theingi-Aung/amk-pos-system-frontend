@@ -1,16 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useNavigate} from 'react-router-dom';
 import axios from '../axios';
+import { useAuth } from '../contexts/AuthContext'
 
 export default function Nav(){
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = useAuth()
   const navigate = useNavigate()
-  const token = localStorage.getItem('token')
 
   const handleLogout = async(e) => {
-    // await axios.post('/logout', null, { headers: { 'Authorization':  token} });
-    localStorage.removeItem('user')
-    navigate('/')
+    await axios.post('/logout')
+    .then(() => {
+      localStorage.removeItem('user')
+      navigate('/')
+    })
   }
 
   return (

@@ -6,10 +6,11 @@ import "./../../scss/forgot.scss";
 import LockIcon from "./../../img/lock-icon-2-removebg.png"
 import {useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function ConfirmOldPassword() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('user'))
+  const {user} = useAuth()
   const [error, setError] = React.useState('');
   const [passwordError, setPasswordError] = React.useState('');
 
@@ -55,7 +56,7 @@ export default function ConfirmOldPassword() {
                     )}
                 </div>
                 <button className="btn w-100 btn-primary my-4">Confirm</button>
-                <p className='text-center'><a href="" className='forgot-current-psw'>Forgot password?<FontAwesomeIcon icon="fa-regular fa-key" /></a></p>
+                <p className='text-center'><a href="/security-question" className='forgot-current-psw'>Forgot password?<FontAwesomeIcon icon="fa-regular fa-key" /></a></p>
               </form>
             </div>
           </div>

@@ -39,10 +39,8 @@ const furnitures = [jewellery1, jewellery2];
 
 export default function Products() {
   const [categories, setCategory] = useState([]);
-  console.log(categories);
   useEffect(() => {
-    axios
-      .get("/categories")
+    axios.get("/categories")
       .then((response) => {
         setCategory(response.data.categories);
       })

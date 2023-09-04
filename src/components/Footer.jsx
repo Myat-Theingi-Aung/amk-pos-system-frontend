@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAuth } from '../contexts/AuthContext'
 
 const Footer = () => {
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = useAuth()
   return (
     <>
       <div className="container-fluid bg-primary">

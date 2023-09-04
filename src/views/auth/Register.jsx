@@ -3,9 +3,10 @@ import axios from './../../axios';
 import {useNavigate} from 'react-router-dom';
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function Register() {
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user, setUser, csrfToken } = useAuth()
   const navigate = useNavigate();
   const [error, setError] = React.useState('');
   const [nameError, setNameError] = React.useState('');
@@ -18,7 +19,6 @@ export default function Register() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const { name, phone, address, NRC, food, color, password, password_confirmation } = e.target.elements;
-    console.log(e.target.elements)
     const body = {
       name: name.value,
       address: address.value,
@@ -29,11 +29,10 @@ export default function Register() {
 			password: password.value,
       password_confirmation: password_confirmation.value
 		};
-    console.log(body)
+    await csrfToken();
     await axios.post('/register', body)
 			.then(response => {
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('user', JSON.stringify(response.data.user))
+        setUser(response.data.user)
         navigate('/');
 			}).catch(error => {
         error.response.data?.error ? setError(error.response.data.error) : setError('')
