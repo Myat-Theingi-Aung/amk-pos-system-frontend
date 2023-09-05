@@ -26,7 +26,13 @@ $primary: #cb7c7c;
 }
 
 .active {
-  background-color: $primary !important;
+  background-color: white !important;
+  color: $primary !important;
+  border-radius: 10px;
+}
+
+.active .nav-link {
+  color: $primary !important;
 }
 
 // tabs
@@ -220,4 +226,3 @@ $primary: #cb7c7c;
   color: #fff;
   background-color:  #cb7c7c;
 }
-

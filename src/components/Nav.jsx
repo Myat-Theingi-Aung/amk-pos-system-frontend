@@ -1,11 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from '../axios';
 import { useAuth } from '../contexts/AuthContext'
+import { useLocation } from "react-router-dom";
 
 export default function Nav(){
   const { user } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const { pathname } = location
+  const splitLocation = pathname.split("/")
 
   const handleLogout = async(e) => {
     await axios.post('/logout')
@@ -25,17 +29,17 @@ export default function Nav(){
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link text-white active" aria-current="page" href="/">Home</a>
+              <li className={splitLocation[1] === "" ? "active" : ""}>
+                <Link className="nav-link text-white" aria-current="page" to="/">Home</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="/products">Products</a>
+              <li className={splitLocation[1] === "products" ? "active" : ""}>
+                <Link className="nav-link text-white" to="/products">Products</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="/about">About</a>
+              <li className={splitLocation[1] === "about" ? "active" : ""}>
+                <Link className="nav-link text-white" to="/about">About</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="/contact-us">Contact Us</a>
+              <li className={splitLocation[1] === "contact-us" ? "active" : ""}>
+                <Link className="nav-link text-white" to="/contact-us">Contact Us</Link>
               </li>
               { user ?
                 <li className="nav-item">
@@ -45,19 +49,19 @@ export default function Nav(){
                       <span className='d-inline-block ms-2'>{user.name}</span>
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end">
-                      <li><a href='/profile' className="dropdown-item">Profile</a></li>
-                      <li><a href='/confirm-old-password' className="dropdown-item">Change Password</a></li>
+                      <li className={splitLocation[1] === "profile" ? "active" : ""}><Link to='/profile' className="dropdown-item">Profile</Link></li>
+                      <li className={splitLocation[1] === "confirm-old-password" ? "active" : ""}><Link to='/confirm-old-password' className="dropdown-item">Change Password</Link></li>
                       <li><button onClick={handleLogout} className="dropdown-item">Logout</button></li>
                     </ul>
                   </div>
                 </li>
                 :
                 <div className='d-flex'>
-                  <li className="nav-item">
-                    <a className="nav-link text-white" href="/login">Login</a>
+                  <li className={splitLocation[1] === "login" ? "active" : ""}>
+                    <Link className="nav-link text-white" to="/login">Login</Link>
                   </li>
-                  <li className="nav-item">
-                    <a className="nav-link text-white" href="/register">Register</a>
+                  <li className={splitLocation[1] === "register" ? "active" : ""}>
+                    <Link className="nav-link text-white" to="/register">Register</Link>
                   </li>
                 </div>
               }
