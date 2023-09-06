@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
-  const { setUser, setToken } = useAuth();
+  const { user, setUser, setToken } = useAuth();
   const [loginUrl, setLoginUrl] = React.useState(null);
   const navigate = useNavigate();
   const [error, setError] = React.useState('');
