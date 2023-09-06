@@ -20,19 +20,19 @@ export default function Profile() {
   async function getSaleItems() {
     await axios.get(`/sales/${user.id}/user`).then((response) => {
       setSales(response.data.sales);
-    });
+    }).catch(() => setSales([]) )
   }
 
   async function getProducts() {
     await axios.get(`/products`).then((response) => {
       setProducts(response.data.products);
-    });
+    })
   }
 
   async function getPayments() {
     await axios.get(`/payments/${user.id}/user`).then((response) => {
       setPayments(response.data.payments);
-    });
+    }).catch(() => setPayments([]))
   }
 
   function calculateTotalPrice() {

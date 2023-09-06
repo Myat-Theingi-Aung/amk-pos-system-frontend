@@ -56,7 +56,7 @@ export default function ConfirmOldPassword() {
                     )}
                 </div>
                 <button className="btn w-100 btn-primary my-4">Confirm</button>
-                <p className='text-center'><a href="/security-question" className='forgot-current-psw'>Forgot password?<FontAwesomeIcon icon="fa-regular fa-key" /></a></p>
+                <p className='text-center'><a href="/security-question" className='forgot-current-psw'>Forgot password?<FontAwesomeIcon icon="fa-solid fa-key" /></a></p>
               </form>
             </div>
           </div>

@@ -15,6 +15,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
+  const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")) || null);
 
   // csrf token generation for guest methods
   const csrfToken = async () => {
@@ -24,15 +25,12 @@ export const AuthProvider = ({ children }) => {
 
   // Set user to local storage whenever it changes
   useEffect(() => {
-    if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
-    } else {
-      localStorage.removeItem("user");
-    }
-  }, [user]);
+    user ? localStorage.setItem("user", JSON.stringify(user)) : localStorage.removeItem("user");
+    token ? localStorage.setItem("token", JSON.stringify(token)) : localStorage.removeItem("token");
+  }, [user, token]);
 
   // Create the context value
-  const contextValue = { user, setUser, csrfToken };
+  const contextValue = { user, setUser, csrfToken, token, setToken };
 
   return (
     <AuthContext.Provider value={contextValue}>

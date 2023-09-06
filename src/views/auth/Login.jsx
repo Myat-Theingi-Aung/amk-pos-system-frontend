@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
-  const { user, setUser } = useAuth();
+  const { setUser, setToken } = useAuth();
+  const [loginUrl, setLoginUrl] = React.useState(null);
   const navigate = useNavigate();
   const [error, setError] = React.useState('');
   const [phoneError, setPhoneError] = React.useState('');
@@ -23,6 +24,7 @@ export default function Login() {
     try {
       const response = await axios.post('/login', body);
       setUser(response.data.user)
+      setToken(response.data.token)
       navigate('/');
     } catch (error) {
       console.log('error')

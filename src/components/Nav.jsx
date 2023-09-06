@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useLocation } from "react-router-dom";
 
 export default function Nav(){
-  const { user } = useAuth()
+  const { user, setUser, setToken } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
   const { pathname } = location
@@ -14,7 +14,8 @@ export default function Nav(){
   const handleLogout = async(e) => {
     await axios.post('/logout')
     .then(() => {
-      localStorage.removeItem('user')
+      setUser()
+      setToken()
       navigate('/')
     })
   }

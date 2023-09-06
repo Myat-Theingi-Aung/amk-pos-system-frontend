@@ -19,7 +19,7 @@ export default function ChangePassword() {
               <div className="container d-flex justify-content-center align-items-center my-5">
                 <img src={ChangePasswordIcon} alt="lock-icon" className='img-fluid' style={{ width: '200px' }} />
               </div>
-              <form  method="post">
+              <form method="post">
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">New Password</label>
                   <input type="password" className="form-control" id="password" />
